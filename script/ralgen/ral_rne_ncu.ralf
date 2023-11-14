@@ -1,0 +1,73 @@
+block rne_ncu_reg_top {
+      bytes 4;
+ register NCU_CTRL @ 'h0000{
+     left_to_right;
+       field RESERVED_3{
+            bits 29;
+            access ro;
+            reset   29'b0;
+        }
+       field CONTINUE{
+            bits 1;
+            access w1;
+            reset   1'b0;
+        }
+       field PAUSE{
+            bits 1;
+            access ro;
+            reset   1'b0;
+        }
+       field EN{
+            bits 1;
+            access rw;
+            reset   1'b0;
+        }
+}
+ register NCU_INT_CLR @ 'h0018{
+       field RESERVED1{
+            bits 29;
+            access ro;
+            reset   29'b0;
+        }
+       field CONTINUE1{
+            bits 1;
+            access w1;
+            reset   1'b0;
+        }
+       field PAUSE1{
+            bits 1;
+            access ro;
+            reset   1'b0;
+        }
+       field EN1{
+            bits 1;
+            access rw;
+            reset   1'b0;
+        }
+}
+ memory pcfg @ 'h1800 {
+     bits 32;
+    size 256.0;
+    access ro;
+    }
+ memory ispm @ 'h8000 {
+     bits 32;
+    size 8192.0;
+    access rw;
+    }
+ memory mspm @ 'h10000 {
+     bits 32;
+    size 16384.0;
+    access rw;
+    }
+ memory wspm @ 'h40000 {
+     bits 32;
+    size 1k;
+    access rw;
+    }
+ memory tspm @ 'h100000 {
+     bits 32;
+    size 10k;
+    access ro;
+    }
+}

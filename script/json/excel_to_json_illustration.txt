@@ -1,0 +1,13 @@
+illustration:
+	1.refer to excel in this directory for format
+	2.the sheet name and the variable path can be change
+	3.multiple group can add multiple sheet
+	
+attention:
+	1.the first row and the first colume is cannot be empty
+	2.the last row of command column is cannot be empty
+	
+example:
+	./excel_to_json.py
+	print 'Conversion succeeded' finish conver
+	change parameter use parameter.py
